@@ -1,0 +1,75 @@
+<style>
+.background-blue-1{
+	background-color: rgb(2, 2, 32);
+}
+
+
+button{
+	box-shadow: 0px 1px 9px 3px #06066f;
+	--gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+}
+
+
+.box {
+  display: grid;
+  place-content: center;
+  color: white;
+  text-shadow: 0 1px 0 #000;
+  
+  --border-angle: 0turn;
+  --main-bg: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 5%,
+      #112 60%,
+      #213 95%
+    );
+  
+  border: solid 5px transparent;
+  border-radius: 2em;
+  --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+  
+  background: 
+    var(--main-bg) padding-box,
+    var(--gradient-border) border-box, 
+    var(--main-bg) border-box;
+  
+  background-position: center center;
+
+  animation: bg-spin 3s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+.displa-flex-nav{
+	display: flex;
+}
+
+</style>
+
+
+<nav class="navbar fixed-top  mx-3 navbar-0 bg-0">
+	<div class="container-fluid">
+	  <a href="" class="navbar-brand" ><img src="/logo/logo1.png" style="width: 5rem ; border-radius: 50px;" alt=""></a>
+		<div class="displa-flex-nav">
+		<a href="/"><button class="btn btn-outline-success mx-2 box" type="submit"><b>Home</b></button></a> 
+		<a href="/about"><button class="btn btn-outline-danger mx-2 box " type="submit"><b>About</b></button></a>
+		<a href="/url/"><button class="btn btn-outline-warning  mx-2 box " style="color: white;" type="submit"><b>My Url</b></button></a>
+		<a href="/login"><button class="btn btn-outline-info mx-2 box" style="color: white;" type="submit"><b>Login</b></button></a>
+		</div>
+	</div>
+  </nav>
+
+  

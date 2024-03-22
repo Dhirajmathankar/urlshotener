@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="">
+
+<header style="border: 2px solid black; font-style:bold;  box-shadow:2px 0px 14px 2px black;  border: 1px solid; width: 100vw; ">
+  <%- include('../partials/header'); %>
+</header>
+
+<main style="padding-top: 120px;" class="container">
+  
+   <div class="container bg-0 p-3 rounded  " style="color: black; box-shadow:1px 6px 16px 3px black;  border: 1px solid;">
+    <div class="row " >
+      <div class="col my-auto ">
+        <div class="py-3 container "  style="text-align: center; justify-content: center;">
+        <h1 style="text-align: center;"><b>Sign In!</b></h1>
+        <form action="/user/signin" method="post">
+		  <div class="row justify-content-md-center"" style="text-align: left; ">
+			<label for="staticEmail" class="col-sm-7 col-form-label" style="margin-left: 100px;">Enter Your Email</label> 
+			<div class="col-sm-6">
+				<input type="email" required name="email" placeholder="example.dev.com@gmail.com" class="form-control" id="email">
+			</div>
+		  </div>
+
+		  <div class="row justify-content-md-center mb-3" style="text-align: left; ">
+			<label for="staticPassword" class="col-sm-7 col-form-label" style="margin-left: 100px;">Enter Your Password</label> 
+			<div class="col-sm-6">
+				<input type="password" name="password" class="form-control" id="inputPassword">
+			</div>
+		  </div>
+
+		  <div class="row justify-content-md-center mb-3" style="text-align: left; ">
+			<label for="staticEmail" class="col-sm-7 col-form-label" style="margin-left: 100px;">Enter Your Confirm Password</label> 
+			<div class="col-sm-6">
+				<input type="password" name="confPassword" class="form-control" id="inputPassword">
+			</div>
+		  </div>
+
+		  <button class="btn btn-outline-success col-sm-6 justify-center" style="text-align: center; justify-content:  center; background-color: blue; justify-items: center; " type="submit"><b>Sign In</b></button>
+		</form>
+        </div>
+		<div class="" style="text-align: center;">
+			<div>
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR71egxTkocSLV1WTllosGzGBOcVmZut6AJph8U_iX8hw&s" style="width: 30px; border-radius: 50px;" alt="">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE3kWvKFg7BVi0PKVNr-YkOnNVGOUknMxEu09WNkDE8IVKMAPP74DrImMwYN2LuIWp6Gc&usqp=CAU" style="width: 30px;  border-radius: 50px;" alt="">
+				<img src="https://www.shareicon.net/data/512x512/2015/08/26/91245_plus_512x512.png" style="width: 30px;  border-radius: 50px;" alt="">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNVih4o5wiiLPPMnkahxjAmn5Dy4t-WfRQEkkSSYlSyw&s" style="width: 30px;  border-radius: 50px;" alt="">
+			</div>
+		</div>
+      </div>
+    </div>
+   </div>
+</main>
+
+<footer class=" fixed-bottom " style="border: 2px solid black; font-style:bold;  box-shadow:2px 0px 14px 2px black;  border: 1px solid; ">
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

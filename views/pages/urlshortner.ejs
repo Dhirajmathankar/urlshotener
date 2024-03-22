@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="">
+
+<header style="border: 2px solid black; font-style:bold;  box-shadow:2px 0px 14px 2px black;  border: 1px solid; width: 100vw; ">
+  <%- include('../partials/header'); %>
+</header>
+
+<main style="padding-top: 120px;" class="container">
+  
+   <div class="container bg-0 p-3 rounded  " style="color: black; box-shadow:1px 6px 16px 3px black;  border: 1px solid;">
+    <div class="row ">
+      <div class="col my-auto ">
+        <div class="py-3 my-1" >
+          <h1><b>Welcome to ShortLinks!</b></h1>
+          <!-- <form> -->
+            <div class="form-group">
+              <label for="exampleInputEmail1">Enter Your Url</label>
+              <input type="text" class="form-control" id="UserUrl" aria-describedby="emailHelp" id="shortUrl" placeholder="https://emaple.google.com">
+            </div>
+            
+            <div class="row">
+              <div class="form-check col-4">
+                <label for="customRange1" class="form-label">Example range <strong id="lebaleOfRange">10</strong>  </label>
+                <input type="range" onchange="displayRange(value)" id="generateUrlLength" min="10" max="100" class="form-range" id="customRange1">
+              </div>
+
+              <script>
+                function displayRange(value){
+                document.getElementById('lebaleOfRange').innerText = value ;
+                }
+              </script>
+
+              <div class="col-3 mt-3">
+                <button type="submit" id="userUrlSubmit" onclick="submitShortUrl()" class="btn btn-primary">Submit</button>
+              </div>
+
+
+              <script>
+                  function submitShortUrl(){
+                        let rangevalue = document.getElementById('generateUrlLength').value ;
+                        let shortUrlOfUser = document.getElementById('shortUrl').value
+                        // fetch('/user/')
+                        console.log(rangevalue)
+                  }
+              </script>
+
+              <div class="col-4 row">
+                <div class="form-check col-10">
+                  <input type="text" class="form-control col-12" id="customRange1">
+                </div>
+                <div class="col-2">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </div>
+          <!-- </form> -->
+          </div>
+      </div>
+      <div class="col  text-center">
+        <img src="https://servizinazionali.infn.it/wp-content/uploads/2021/02/cuturl.png" style="border-radius: 120px; width: 200px; margin: 30px;" alt="" srcset="">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 bg-danger">
+        <table class="col-12 text-center table">
+          <thead>
+            <th class="text-left">  NO. </th>
+            <th>  Short Url </th>
+            <th>  Your Url </th>
+            <th>  Total Search </th>
+            <th>  Active/DeActive </th>
+          </thead>
+        </table>
+      </div>
+      <div class="col-12 bg-success " style="height: 150px; overflow: scroll;">
+
+        <table class="col-12 text-center table">
+          <tbody>
+            <% FullUrl.forEach((element, index) => { %>
+            <tr>
+              <td> <%= index  %></td>
+              <td><%= element.shortid %></td>
+              <td> <%= element.redirectURL %> </td>
+              <td> <%= element.visitHistory %> </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+     </div>
+     
+   </div>
+</main>
+
+<footer class=" fixed-bottom " style="border: 2px solid black; font-style:bold;  box-shadow:2px 0px 14px 2px black;  border: 1px solid; ">
+  <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
